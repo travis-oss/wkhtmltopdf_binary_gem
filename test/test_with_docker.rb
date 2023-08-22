@@ -1,12 +1,16 @@
 require 'minitest/autorun'
 
+def ci?
+  ENV['CI']
+end
+
 def macos?
   ENV['RUNNER_OS'] && ENV['RUNNER_OS'] == 'macOS'
 end
 
 class WithDockerTest < Minitest::Test
   SETUP = begin
-            `docker compose build --no-cache` unless macos?
+            `docker compose build --no-cache` unless ci? || macos?
           end
 
   def test_centos_6

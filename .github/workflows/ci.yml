@@ -3,16 +3,15 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  tests:
-    runs-on: ${{ matrix.os }}
+  tests-on-mac:
+    runs-on: macos-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
         ruby-version: ['2.3', '2.4', '2.5', '2.6', '2.7', '3.0', '3.1', '3.2']
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Install Ruby ${{ matrix.ruby-version }} on ${{ matrix.os }}
+      - name: Install Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
@@ -20,5 +19,27 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-      - name: Run tests with Ruby ${{ matrix.ruby-version }} on ${{ matrix.os }}
+      - name: Run tests with Ruby ${{ matrix.ruby-version }}
+        run: bundle exec rake
+
+  tests-on-docker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.2']
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build docker images
+        run: docker compose build --no-cache
+
+      - name: Install Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run tests on docker
         run: bundle exec rake
