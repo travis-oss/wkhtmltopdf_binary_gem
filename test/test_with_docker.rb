@@ -6,7 +6,7 @@ end
 
 class WithDockerTest < Minitest::Test
   SETUP = begin
-            `docker-compose build --no-cache` unless macos?
+            `docker compose build --no-cache` unless macos?
           end
 
   def test_centos_6
@@ -54,12 +54,12 @@ class WithDockerTest < Minitest::Test
   end
 
   def test_with_macos
-    assert_equal(`bin/wkhtmltopdf --version`.strip, 'wkhtmltopdf 0.12.6 (with patched qt)') if macos?
+    assert_equal('wkhtmltopdf 0.12.6 (with patched qt)', `bin/wkhtmltopdf --version`.strip) if macos?
   end
 
   private
 
   def test(with:)
-    assert_equal(`docker-compose run --rm #{with}`.strip, 'wkhtmltopdf 0.12.6 (with patched qt)') unless macos?
+    assert_match(/wkhtmltopdf 0\.12\.6(.1)? \(with patched qt\)/, `docker compose run --rm #{with}`.strip) unless macos?
   end
 end
