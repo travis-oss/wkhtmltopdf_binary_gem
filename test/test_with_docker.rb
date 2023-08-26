@@ -37,6 +37,10 @@ class WithDockerTest < Minitest::Test
     test with: 'rockylinux_8'
   end
 
+  def test_rockylinux_9
+    test with: 'rockylinux_9'
+  end
+
   def test_debian_9
     test with: 'debian_9'
   end

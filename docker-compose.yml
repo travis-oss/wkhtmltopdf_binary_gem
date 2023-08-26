@@ -100,6 +100,13 @@ services:
     volumes:
       - .:/root/wkhtmltopdf_binary_gem
 
+  rockylinux_9:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile-rockylinux_9
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
   archlinux:
     build:
       context: .
