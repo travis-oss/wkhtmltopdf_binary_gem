@@ -1,4 +1,4 @@
-FROM rockylinux/rockylinux:8
+FROM rockylinux:8
 
 RUN yum install -y ruby libjpeg-turbo libpng libXrender fontconfig libXext
 

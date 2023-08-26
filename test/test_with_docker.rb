@@ -33,6 +33,10 @@ class WithDockerTest < Minitest::Test
     test with: 'almalinux_9'
   end
 
+  def test_rockylinux_8
+    test with: 'rockylinux_8'
+  end
+
   def test_debian_9
     test with: 'debian_9'
   end
@@ -67,10 +71,6 @@ class WithDockerTest < Minitest::Test
 
   def test_with_archlinux
     test with: 'archlinux'
-  end
-
-  def test_rockylinux_8
-    test with: 'rockylinux_8'
   end
 
   def test_with_macos
