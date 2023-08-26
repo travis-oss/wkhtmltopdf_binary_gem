@@ -54,11 +54,11 @@ class WithDockerTest < Minitest::Test
   end
 
   def test_amazonlinux_2
-    test with: 'amazonlinux_2'
+    test_on_x86_and_arm with: 'amazonlinux_2'
   end
 
   def test_amazonlinux_2023
-    test with: 'amazonlinux_2023'
+    test_on_x86_and_arm with: 'amazonlinux_2023'
   end
 
   def test_debian_9

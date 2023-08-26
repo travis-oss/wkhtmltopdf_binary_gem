@@ -127,3 +127,17 @@ services:
       dockerfile: .docker/Dockerfile-oraclelinux_9
     volumes:
       - .:/root/wkhtmltopdf_binary_gem
+
+  amazonlinux_2:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile-amazonlinux_2
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  amazonlinux_2023:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile-amazonlinux_2023
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
