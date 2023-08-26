@@ -46,11 +46,11 @@ class WithDockerTest < Minitest::Test
   end
 
   def test_oraclelinux_8
-    test with: 'oraclelinux_8'
+    test_on_x86_and_arm with: 'oraclelinux_8'
   end
 
   def test_oraclelinux_9
-    test with: 'oraclelinux_9'
+    test_on_x86_and_arm with: 'oraclelinux_9'
   end
 
   def test_amazonlinux_2

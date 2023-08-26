@@ -32,6 +32,8 @@ bin/wkhtmltopdf_almalinux_8_arm64
 bin/wkhtmltopdf_almalinux_9_arm64
 bin/wkhtmltopdf_rockylinux_8_arm64
 bin/wkhtmltopdf_rockylinux_9_arm64
+bin/wkhtmltopdf_oraclelinux_8_arm64
+bin/wkhtmltopdf_oraclelinux_9_arm64
 
 bin/wkhtmltopdf_debian_9_arm64
 bin/wkhtmltopdf_debian_10_arm64
