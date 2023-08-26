@@ -14,6 +14,7 @@ bin/wkhtmltopdf_rockylinux_9_amd64
 bin/wkhtmltopdf_oraclelinux_8_amd64
 bin/wkhtmltopdf_oraclelinux_9_amd64
 bin/wkhtmltopdf_amazonlinux_2_amd64
+bin/wkhtmltopdf_amazonlinux_2023_amd64
 
 bin/wkhtmltopdf_debian_9_amd64
 bin/wkhtmltopdf_debian_10_amd64

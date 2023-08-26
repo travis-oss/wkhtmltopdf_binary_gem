@@ -53,6 +53,10 @@ class WithDockerTest < Minitest::Test
     test with: 'amazonlinux_2'
   end
 
+  def test_amazonlinux_2023
+    test with: 'amazonlinux_2023'
+  end
+
   def test_debian_9
     test with: 'debian_9'
   end
