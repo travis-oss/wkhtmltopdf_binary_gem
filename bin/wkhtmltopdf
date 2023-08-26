@@ -48,6 +48,8 @@ suffix = case RbConfig::CONFIG['host_os']
 
            os = 'debian_11' if os.start_with?('debian_11')
 
+           os = 'debian_12' if os.start_with?('debian_12')
+
            os = 'archlinux' if os.start_with?('arch_') ||
                                os.start_with?('manjaro_')
 

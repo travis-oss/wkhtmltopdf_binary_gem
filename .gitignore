@@ -11,6 +11,7 @@ bin/wkhtmltopdf_centos_8_amd64
 bin/wkhtmltopdf_debian_9_amd64
 bin/wkhtmltopdf_debian_10_amd64
 bin/wkhtmltopdf_debian_11_amd64
+bin/wkhtmltopdf_debian_12_amd64
 
 bin/wkhtmltopdf_ubuntu_16.04_amd64
 bin/wkhtmltopdf_ubuntu_18.04_amd64
@@ -23,6 +24,7 @@ bin/wkhtmltopdf_centos_7_i386
 bin/wkhtmltopdf_debian_9_i386
 bin/wkhtmltopdf_debian_10_i386
 bin/wkhtmltopdf_debian_11_i386
+bin/wkhtmltopdf_debian_12_i386
 
 bin/wkhtmltopdf_ubuntu_16.04_i386
 bin/wkhtmltopdf_ubuntu_18.04_i386
