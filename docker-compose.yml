@@ -100,6 +100,13 @@ services:
     volumes:
       - .:/root/wkhtmltopdf_binary_gem
 
+  oraclelinux_9:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile-oraclelinux_9
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
   rockylinux_8:
     build:
       context: .
