@@ -62,35 +62,35 @@ class WithDockerTest < Minitest::Test
   end
 
   def test_debian_9
-    test with: 'debian_9'
+    test_on_x86_and_arm with: 'debian_9'
   end
 
   def test_debian_10
-    test with: 'debian_10'
+    test_on_x86_and_arm with: 'debian_10'
   end
 
   def test_debian_11
-    test with: 'debian_11'
+    test_on_x86_and_arm with: 'debian_11'
   end
 
   def test_debian_12
-    test with: 'debian_12'
+    test_on_x86_and_arm with: 'debian_12'
   end
 
   def test_with_ubuntu_16
-    test with: 'ubuntu_16.04'
+    test_on_x86_and_arm with: 'ubuntu_16.04'
   end
 
   def test_with_ubuntu_18
-    test with: 'ubuntu_18.04'
+    test_on_x86_and_arm with: 'ubuntu_18.04'
   end
 
   def test_with_ubuntu_20
-    test with: 'ubuntu_20.04'
+    test_on_x86_and_arm with: 'ubuntu_20.04'
   end
 
   def test_with_ubuntu_22
-    test with: 'ubuntu_22.04'
+    test_on_x86_and_arm with: 'ubuntu_22.04'
   end
 
   def test_with_archlinux

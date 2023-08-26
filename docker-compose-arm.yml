@@ -1,1 +1,73 @@
 services:
+
+  debian_9:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-debian_9
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  debian_10:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-debian_10
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  debian_11:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-debian_11
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  debian_12:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-debian_12
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  ubuntu_16.04:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-ubuntu_16.04
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  ubuntu_18.04:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-ubuntu_20.04
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  ubuntu_20.04:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-ubuntu_20.04
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
+  ubuntu_22.04:
+    build:
+      context: .
+      platforms:
+        - linux/arm64/v8
+      dockerfile: .docker/Dockerfile-ubuntu_20.04
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
