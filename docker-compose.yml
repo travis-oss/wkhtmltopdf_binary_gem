@@ -86,6 +86,13 @@ services:
     volumes:
       - .:/root/wkhtmltopdf_binary_gem
 
+  almalinux_9:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile-almalinux_9
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
   rockylinux_8:
     build:
       context: .
