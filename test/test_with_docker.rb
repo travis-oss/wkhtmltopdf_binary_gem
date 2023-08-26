@@ -22,11 +22,11 @@ class WithDockerTest < Minitest::Test
   end
 
   def test_centos_7
-    test with: 'centos_7'
+    test_on_x86_and_arm with: 'centos_7'
   end
 
   def test_centos_8
-    test with: 'centos_8'
+    test_on_x86_and_arm with: 'centos_8'
   end
 
   def test_almalinux_8
