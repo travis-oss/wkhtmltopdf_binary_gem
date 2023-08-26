@@ -38,11 +38,11 @@ class WithDockerTest < Minitest::Test
   end
 
   def test_rockylinux_8
-    test with: 'rockylinux_8'
+    test_on_x86_and_arm with: 'rockylinux_8'
   end
 
   def test_rockylinux_9
-    test with: 'rockylinux_9'
+    test_on_x86_and_arm with: 'rockylinux_9'
   end
 
   def test_oraclelinux_8
