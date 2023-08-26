@@ -107,6 +107,13 @@ services:
     volumes:
       - .:/root/wkhtmltopdf_binary_gem
 
+  amazonlinux_2:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile-amazonlinux_2
+    volumes:
+      - .:/root/wkhtmltopdf_binary_gem
+
   rockylinux_8:
     build:
       context: .

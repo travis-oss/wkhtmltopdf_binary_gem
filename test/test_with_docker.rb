@@ -49,6 +49,10 @@ class WithDockerTest < Minitest::Test
     test with: 'oraclelinux_9'
   end
 
+  def test_amazonlinux_2
+    test with: 'amazonlinux_2'
+  end
+
   def test_debian_9
     test with: 'debian_9'
   end
