@@ -48,6 +48,8 @@ suffix = case RbConfig::CONFIG['host_os']
 
            os = 'rockylinux_9' if os.start_with?('rocky_9')
 
+           os = 'oraclelinux_8' if os.start_with?('ol_8.')
+
            os_based_on_debian_9 = os.start_with?('debian_9') ||
                                   os.start_with?('deepin')
            os = 'debian_9' if os_based_on_debian_9
