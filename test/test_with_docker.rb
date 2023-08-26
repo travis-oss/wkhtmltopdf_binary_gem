@@ -8,6 +8,10 @@ def macos?
   ENV['RUNNER_OS'] && ENV['RUNNER_OS'] == 'macOS'
 end
 
+def arm?
+  ENV['ARM']
+end
+
 class WithDockerTest < Minitest::Test
   SETUP = begin
             `docker compose build --no-cache` unless ci? || macos?
@@ -100,6 +104,14 @@ class WithDockerTest < Minitest::Test
   private
 
   def test(with:)
-    assert_match(/wkhtmltopdf 0\.12\.6(.1)? \(with patched qt\)/, `docker compose run --rm #{with}`.strip) unless macos?
+    test_on_docker(with: with) if !macos? && !arm?
+  end
+
+  def test_on_x86_and_arm(with:)
+    test_on_docker(with: with) unless macos?
+  end
+
+  def test_on_docker(with:)
+    assert_match(/wkhtmltopdf 0\.12\.6(.1)? \(with patched qt\)/, `docker compose run --rm #{with}`.strip)
   end
 end

@@ -43,3 +43,35 @@ jobs:
 
       - name: Run tests on docker
         run: bundle exec rake
+
+  tests-on-docker-arm:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.2']
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: linux/arm64/v8
+
+      - uses: actions/checkout@v3
+
+      - name: Build docker images
+        env:
+          COMPOSE_FILE: docker-compose-arm.yml
+        run: docker compose build --no-cache
+
+      - name: Install Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run tests on docker(arm64)
+        env:
+          ARM: 1
+          COMPOSE_FILE: docker-compose-arm.yml
+        run: bundle exec rake
